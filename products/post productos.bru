@@ -1,0 +1,22 @@
+meta {
+  name: post productos
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/productos
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nombre": "Licuadora"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

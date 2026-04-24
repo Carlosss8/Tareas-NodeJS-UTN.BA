@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 
@@ -8,7 +9,7 @@ app.use(express.json());
 
 const connectMongoDb = async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/db_tarea_3")
+        await mongoose.connect(process.env.MONGO_URI)
         console.log('Conexión a MongoDB establecida');
 
     } catch (error) {
